@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  graph_database:
+    image: neo4j:5.17.0-community
+    container_name: neo4j_study
+    ports:
+      - 7888:7474
+      - 7999:7687
+    restart: unless-stopped
+    environment:
+      - NEO4J_AUTH=neo4j/Adminn@AA312
+    volumes:
+      - ./database-data:/data
